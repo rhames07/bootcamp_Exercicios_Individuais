@@ -2,16 +2,12 @@ package br.com.meli.restaurante.entity;
 
 public class Mesa {
     private Long id;
-    private Pedido[] pedidos;
-    private Double valorConsumido;
 
     public Mesa() {
     }
 
-    public Mesa(Long id, Pedido[] pedidos, Double valorConsumido) {
+    public Mesa(Long id) {
         this.id = id;
-        this.pedidos = pedidos;
-        this.valorConsumido = valorConsumido;
     }
 
     public Long getId() {
@@ -22,19 +18,14 @@ public class Mesa {
         this.id = id;
     }
 
-    public Pedido[] getPedidos() {
-        return pedidos;
+    public Double getValorPedido(Pedido pedido){
+        return pedido.getValor();
     }
 
-    public void setPedidos(Pedido[] pedidos) {
-        this.pedidos = pedidos;
-    }
-
-    public Double getValorConsumido() {
-        return valorConsumido;
-    }
-
-    public void setValorConsumido(Double valorConsumido) {
-        this.valorConsumido = valorConsumido;
+    @Override
+    public String toString() {
+        return "Mesa{" +
+                "id=" + id +
+                '}';
     }
 }

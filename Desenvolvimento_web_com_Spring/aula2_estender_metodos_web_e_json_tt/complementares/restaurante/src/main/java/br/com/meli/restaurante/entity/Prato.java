@@ -47,4 +47,14 @@ public class Prato {
     public void setQuantidade(Double quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public String toString() {
+        return "Prato{" +
+                "id=" + id +
+                ", preco=" + preco +
+                ", descricao='" + descricao + '\'' +
+                ", quantidade=" + quantidade +
+                '}';
+    }
 }

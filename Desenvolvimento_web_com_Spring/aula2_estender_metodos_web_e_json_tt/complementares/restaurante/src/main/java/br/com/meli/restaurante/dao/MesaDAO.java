@@ -1,28 +1,24 @@
 package br.com.meli.restaurante.dao;
 
 import br.com.meli.restaurante.entity.Mesa;
-import br.com.meli.restaurante.entity.Pedido;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
+@Repository
 public class MesaDAO {
-    private static List<Mesa> listaDeMesas = new ArrayList<>();
+    private static List<Mesa> listaDeMesas =new ArrayList<>(List.of(
+            new Mesa(1L),
+            new Mesa(2L)
+    ));
 
-    public MesaDAO() {
-        Bean();
+    public static List<Mesa> getListaDeMesas() {
+        return listaDeMesas;
     }
 
-    private static void Bean(){
-        Mesa[] mesas = {
-                new Mesa(1L, PedidoDAO.getListaDePedidos().toArray(new Pedido[0]), 100.0),
-                new Mesa(1L, PedidoDAO.getListaDePedidos().toArray(new Pedido[1]), 100.0),
-                new Mesa(1L, PedidoDAO.getListaDePedidos().toArray(new Pedido[2]), 100.0),
-                new Mesa(2L, PedidoDAO.getListaDePedidos().toArray(new Pedido[4]), 80.0),
-                new Mesa(3L, PedidoDAO.getListaDePedidos().toArray(new Pedido[3]), 90.0),
-        };
-
-        Collections.addAll(listaDeMesas, mesas);
+    public Optional<Mesa> getMesa(Long id) {
+        return listaDeMesas.stream().filter(m -> m.getId().equals(id)).findFirst();
     }
 }
