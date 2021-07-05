@@ -1,0 +1,24 @@
+[ {
+  "id" : 1,
+  "nome" : "Rhames",
+  "cpf" : "35896521315",
+  "email" : "rhames@mail.com",
+  "telefone" : "11954125412",
+  "pedidos" : [ {
+    "id" : 2,
+    "produtos" : [ {
+      "id" : 1,
+      "descricao" : "toalha",
+      "cor" : "azul",
+      "quantidade" : 1,
+      "preco" : 80.0
+    }, {
+      "id" : 2,
+      "descricao" : "camiseta",
+      "cor" : "verde",
+      "quantidade" : 2,
+      "preco" : 60.0
+    } ],
+    "valor" : 300.0
+  } ]
+} ]
