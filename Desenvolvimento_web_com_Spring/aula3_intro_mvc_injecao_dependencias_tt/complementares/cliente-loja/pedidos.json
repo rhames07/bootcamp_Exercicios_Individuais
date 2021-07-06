@@ -5,6 +5,17 @@
   "email" : "rhames@mail.com",
   "telefone" : "11954125412",
   "pedidos" : [ {
+    "id" : 1,
+    "produtos" : [ {
+      "id" : 1,
+      "descricao" : "toalha",
+      "cor" : "azul",
+      "quantidade" : 2,
+      "preco" : 80.0
+    } ],
+    "valor" : 160.0,
+    "data" : "2021-07-06"
+  }, {
     "id" : 2,
     "produtos" : [ {
       "id" : 1,
@@ -19,6 +30,7 @@
       "quantidade" : 2,
       "preco" : 60.0
     } ],
-    "valor" : 300.0
+    "valor" : 200.0,
+    "data" : "2021-07-06"
   } ]
 } ]

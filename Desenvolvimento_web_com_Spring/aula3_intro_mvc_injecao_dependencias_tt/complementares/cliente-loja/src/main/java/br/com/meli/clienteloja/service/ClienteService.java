@@ -49,7 +49,7 @@ public class ClienteService {
         } catch (Exception e){
             idPedido = 1L;
         }
-        Pedido pedido = new Pedido(idPedido, pedidoDto.getProdutos(), pedidoDto.getValor());
+        Pedido pedido = new Pedido(idPedido, pedidoDto.getProdutos());
         clienteRepository.addPedido(cliente, pedido);
         return idPedido;
     }

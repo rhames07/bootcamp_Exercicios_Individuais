@@ -55,7 +55,7 @@ public class ClienteRepository {
         for (Pedido p: cliente.getPedidos()){
             if(p.getId().equals(idPedido)){
                 p.setProdutos(pedidoDto.getProdutos());
-                p.setValor(pedidoDto.getValor());
+                p.setValor(pedidoDto.valorDaCompra(pedidoDto.getProdutos()));
                 break;
             }
         }

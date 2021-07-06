@@ -1,6 +1,5 @@
 package br.com.meli.clienteloja.dto;
 
-import br.com.meli.clienteloja.entity.Cliente;
 import br.com.meli.clienteloja.entity.Produto;
 
 import java.util.List;
@@ -12,9 +11,9 @@ public class PedidoDto {
     public PedidoDto() {
     }
 
-    public PedidoDto(List<Produto> produtos, double valor) {
+    public PedidoDto(List<Produto> produtos) {
         this.produtos = produtos;
-        this.valor = valor;
+        this.valor = valorDaCompra(produtos);
     }
 
     public List<Produto> getProdutos() {
@@ -33,11 +32,18 @@ public class PedidoDto {
         this.valor = valor;
     }
 
+    public double valorDaCompra(List<Produto> produtos) {
+        double valor = 0;
+        for (Produto p: produtos) {
+            valor += (p.getPreco() * p.getQuantidade());
+        }
+        return valor;
+    }
+
     @Override
     public String toString() {
         return "PedidoDto{" +
                 "produtos=" + produtos +
-                ", valor=" + valor +
                 '}';
     }
 }
