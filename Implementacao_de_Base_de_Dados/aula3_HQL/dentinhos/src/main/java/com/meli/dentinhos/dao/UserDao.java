@@ -1,18 +1,18 @@
 package com.meli.dentinhos.dao;
 
-import com.meli.dentinhos.entity.TurnStatus;
+import com.meli.dentinhos.entity.User;
 
 import javax.persistence.EntityManager;
 
-public class TurnStatusDao {
+public class UserDao {
 
     private final EntityManager em;
 
-    public TurnStatusDao(EntityManager em) {
+    public UserDao(EntityManager em) {
         this.em = em;
     }
 
-    public void save(TurnStatus turnStatus) {
-        em.persist(turnStatus);
+    public void save(User user) {
+        em.persist(user);
     }
 }

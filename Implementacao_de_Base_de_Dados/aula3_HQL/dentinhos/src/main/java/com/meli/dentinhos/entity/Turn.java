@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @Entity
-public class Turns {
+public class Turn {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,7 +23,7 @@ public class Turns {
     @ManyToOne
     private Patient patient;
 
-    public Turns(LocalDate day, Diary diary, TurnStatus turnStatus, Patient patient) {
+    public Turn(LocalDate day, Diary diary, TurnStatus turnStatus, Patient patient) {
         this.day = day;
         this.diary = diary;
         this.turnStatus = turnStatus;

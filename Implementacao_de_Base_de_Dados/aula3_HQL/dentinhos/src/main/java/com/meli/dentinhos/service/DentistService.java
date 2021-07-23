@@ -1,7 +1,7 @@
 package com.meli.dentinhos.service;
 
-import com.meli.dentinhos.dao.PatientDao;
-import com.meli.dentinhos.entity.Patient;
+import com.meli.dentinhos.dao.DentistDao;
+import com.meli.dentinhos.entity.Dentist;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -11,13 +11,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Service
-public class PatientService {
+public class DentistService {
     EntityManagerFactory factory = Persistence.createEntityManagerFactory("dentinhos_unit");
     EntityManager em = factory.createEntityManager();
 
-    PatientDao patientDao = new PatientDao(em);
+    DentistDao dentistDao = new DentistDao(em);
 
-    public List<Patient> getPatientsFromDate(LocalDate date) {
-        return patientDao.getPatientFromDate(date);
+    public List<Dentist> getDentistsThatHasTwoTurnInSameDay(LocalDate date) {
+        return dentistDao.getDentistsThatHasTwoTurnInSameDay(date);
     }
 }

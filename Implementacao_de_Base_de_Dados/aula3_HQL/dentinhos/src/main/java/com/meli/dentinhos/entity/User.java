@@ -1,2 +1,29 @@
-package com.meli.dentinhos.entity;public class User {
+package com.meli.dentinhos.entity;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String userName;
+    private String password;
+    private String userStatus;
+
+    public User(String userName, String password, String userStatus) {
+        this.userName = userName;
+        this.password = password;
+        this.userStatus = userStatus;
+    }
 }

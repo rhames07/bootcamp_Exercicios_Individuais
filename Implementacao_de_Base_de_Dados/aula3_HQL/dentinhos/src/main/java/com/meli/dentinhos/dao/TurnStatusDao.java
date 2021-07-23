@@ -1,18 +1,18 @@
 package com.meli.dentinhos.dao;
 
-import com.meli.dentinhos.entity.Patient;
+import com.meli.dentinhos.entity.TurnStatus;
 
 import javax.persistence.EntityManager;
 
-public class PatientDao {
+public class TurnStatusDao {
 
     private final EntityManager em;
 
-    public PatientDao(EntityManager em) {
+    public TurnStatusDao(EntityManager em) {
         this.em = em;
     }
 
-    public void save(Patient patient) {
-        em.persist(patient);
+    public void save(TurnStatus turnStatus) {
+        em.persist(turnStatus);
     }
 }
